@@ -3,10 +3,14 @@ package com.example.first;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
     private TextView resultField;
@@ -39,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
     {
         Button button=(Button)view;
         numberField.append(button.getText().toString());
+        Toast toast=Toast.makeText(this,numberField.getText().toString(),Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.TOP,0,160);
+        toast.setMargin(120,70);
+        toast.show();
         if(lastOperation.equals("=")&&operand!=null) operand=null;
     }
     public void onOperationClick(View view)
@@ -46,6 +54,11 @@ public class MainActivity extends AppCompatActivity {
         Button button=(Button)view;
         String op=button.getText().toString();
         String number=numberField.getText().toString();
+
+        Snackbar snackbar=Snackbar.make(view,op,Snackbar.LENGTH_LONG);
+        snackbar.setDuration(6000);
+        snackbar.show();
+
         if(number.length()>0)
         {
             number=number.replace(',','.');
