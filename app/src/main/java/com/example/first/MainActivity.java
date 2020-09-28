@@ -1,5 +1,6 @@
 package com.example.first;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -37,6 +38,22 @@ public class MainActivity extends AppCompatActivity {
                 numberField.setText("");
             }
         });
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putString("OPERATION",lastOperation);
+        if(operand!=null) outState.putDouble("OPERAND",operand);
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        lastOperation=savedInstanceState.getString("OPERATION");
+        operand=savedInstanceState.getDouble("OPERAND");
+        operationfield.setText(lastOperation);
+        resultField.setText(operand.toString());
     }
 
     public void onNumberClick(View view)
