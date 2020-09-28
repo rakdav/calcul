@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity"
+    android:background="#F00"
+    android:padding="5dp">
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="4">
+        <TextView
+            android:id="@+id/resultField"
+            android:layout_columnSpan="4"
+            android:layout_gravity="fill"
+            android:background="#FF9800"
+            android:textSize="18pt"
+            />
+        <TextView
+            android:id="@+id/operationField"
+            android:layout_columnSpan="4"
+            android:layout_gravity="fill"
+            android:layout_weight="1"
+            android:background="#8BC34A"
+            android:textSize="18pt"
+            />
+        <EditText android:layout_columnSpan="4"
+            android:layout_gravity="fill"
+            android:background="#FFEB3B"
+            android:textSize="18pt"
+            android:id="@+id/number"/>
+        <Button android:text="7" android:onClick="onNumberClick"/>
+        <Button android:text="8" android:onClick="onNumberClick"/>
+        <Button android:text="9" android:onClick="onNumberClick"/>
+        <Button android:text="/" android:onClick="onOperationClick"/>
+        <Button android:text="4" android:onClick="onNumberClick"/>
+        <Button android:text="5" android:onClick="onNumberClick"/>
+        <Button android:text="6" android:onClick="onNumberClick"/>
+        <Button android:text="*" android:onClick="onOperationClick"/>
+        <Button android:text="1" android:onClick="onNumberClick"/>
+        <Button android:text="2" android:onClick="onNumberClick"/>
+        <Button android:text="3" android:onClick="onNumberClick"/>
+        <Button android:text="-" android:onClick="onOperationClick"/>
+        <Button android:text="0" android:onClick="onNumberClick"/>
+        <Button android:text="," android:onClick="onNumberClick"/>
+        <Button android:text="+" android:onClick="onOperationClick"/>
+        <Button android:text="=" android:onClick="onOperationClick"/>
+        <Button android:text="C"
+            android:layout_columnSpan="4"
+            android:layout_gravity="fill"
+            android:id="@+id/clear"/>
+    </GridLayout>
+
+
+</LinearLayout>
